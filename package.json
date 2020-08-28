@@ -14,7 +14,6 @@
     "lint:fix": "eslint src/ --fix",
     "lint:less": "stylelint \"src/**/*.less\" --syntax less",
     "lint:less:fix": "stylelint \"src/**/*.less\" --syntax less --fix",
-    "precommit": "lint-staged",
     "lint-staged": "lint-staged",
     "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx"
   },
