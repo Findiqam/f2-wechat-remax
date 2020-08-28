@@ -1,0 +1,56 @@
+{
+  "name": "f2-wechat-remax",
+  "private": true,
+  "version": "1.0.0",
+  "description": "f2-wechat-remax",
+  "main": "index.js",
+  "keywords": [],
+  "author": "maqi <maqi1@wufeng-network.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "remax build -t wechat -w",
+    "build": "cross-env NODE_ENV=production remax build -t wechat",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "lint:less": "stylelint \"src/**/*.less\" --syntax less",
+    "lint:less:fix": "stylelint \"src/**/*.less\" --syntax less --fix",
+    "precommit": "lint-staged",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.less": "stylelint --syntax less",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{js,jsx}": "npm run lint-staged:js",
+    "**/*.{js,ts,tsx}": "npm run lint-staged:js"
+  },
+  "dependencies": {
+    "@antv/f2": "^3.7.6",
+    "babel-eslint": "^10.1.0",
+    "bizgoblin": "^0.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-umi": "^1.6.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.13",
+    "prettier": "^2.1.1",
+    "react": "^16.12.0",
+    "remax": "^2.6.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "eslint": "^7.7.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0"
+  }
+}
