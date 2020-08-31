@@ -14,7 +14,7 @@
     "lint:fix": "eslint src/ --fix",
     "lint:less": "stylelint \"src/**/*.less\" --syntax less",
     "lint:less:fix": "stylelint \"src/**/*.less\" --syntax less --fix",
-    "lint-staged": "lint-staged",
+    "lint-staged": "lint-staged --allow-empty",
     "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx"
   },
   "husky": {
