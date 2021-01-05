@@ -1,5 +1,7 @@
 # Remax Wechat
 
+<img src="./readme/img/示例.png" />
+
 使用 Remax 开发微信小程序。
 
 ## Getting Start
